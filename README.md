@@ -1,5 +1,3 @@
-# reactUppgift
-
 # Uppgift: Individuell Projektuppgift — Users App
 
 > Transcribed from `slides/inbox/uppgift react.pdf` (1 page).
