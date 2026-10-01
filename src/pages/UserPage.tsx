@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { UserData } from "../types/Types";
 import UserTable from "../components/UserTable";
+import FloatingSearchBar from "../components/FloatingSearchBar";
 const UserPage = () => {
   const [users, setUsers] = useState([]);
 
@@ -16,6 +16,7 @@ const UserPage = () => {
 
   return (
     <div className="flex flex-col items-center p-8 w-full">
+      <FloatingSearchBar ></FloatingSearchBar>
       <UserTable users={users}></UserTable>
     </div>
   );

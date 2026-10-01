@@ -1,4 +1,4 @@
-import { AboutCardDetails } from "../types/AboutCardTypes";
+import { AboutCardDetails } from "../types/Types";
 
 const AboutCard = (props: AboutCardDetails) => {
   return (
