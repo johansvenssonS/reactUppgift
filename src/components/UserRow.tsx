@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { UserData } from "../types/Types";
 
 //passing props sak
@@ -9,7 +10,7 @@ const UserRow = ({ userData }: UserRowProps) => {
   return (
     <tr className="even:bg-gray-50 hover:bg-gray-100">
       <td className="border border-gray-300 px-4 py-2 align-top">
-        {userData.username}
+        <Link to={`/users/${userData.id}`}>{userData.username}</Link>
       </td>
       <td className="border border-gray-300 px-4 py-2 align-top">
         {userData.profile.name}
