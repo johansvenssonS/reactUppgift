@@ -3,24 +3,13 @@ import UserTable from "../components/UserTable";
 import FloatingSearchBar from "../components/FloatingSearchBar";
 import { useQuery } from "@tanstack/react-query";
 import { ClimbingBoxLoader } from "react-spinners";
+import { useUsers } from "../hooks/userCalls";
 
 const UserPage = () => {
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [search, setSearched] = useState(false);
 
-  const {
-    data: users,
-    isLoading,
-    error,
-  } = useQuery({
-    queryKey: ["users"],
-    queryFn: async () => {
-      const response = await fetch("users.JSON");
-      if (!response.ok)
-        throw new Error("Kunde inte hämta användare" + response.status);
-      return response.json();
-    },
-  });
+  const { data: users, isLoading, error } = useUsers();
 
   if (isLoading) {
     return (
