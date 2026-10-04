@@ -22,15 +22,20 @@ const SingleUserPage = () => {
   console.log(user);
 
   let selectedBackground = "";
+  let textColor = "";
   if (user.settings.theme === "dark") {
     selectedBackground = "bg-black";
+    textColor = "text-white";
   } else {
     selectedBackground = "bg-white";
+    textColor = "text-black";
   }
 
   return (
     <div className="flex flex-col items-center p-8 w-full">
-      <div className="flex flex-col items-center h-200 w-full border-3 rounded-[1rem] p-8">
+      <div
+        className={`flex flex-col items-center h-200 w-full border-3 rounded-[1rem] p-8 ${textColor} ${selectedBackground}`}
+      >
         <User size={50}></User>
         <h3>ID: {user.id}</h3>
         <h3> Användarnamn: {user.username}</h3>
@@ -42,8 +47,6 @@ const SingleUserPage = () => {
           Postnummer: {user.profile.address.zipCode}
         </h4>
         <h3>Roller: {user.roles}</h3>
-
-        <div className={`h-50 w-50 ${selectedBackground}`}></div>
       </div>
     </div>
   );
