@@ -32,6 +32,8 @@ interface UserAddress {
   city: string;
   street: string;
   zipCode: string;
+  lat: number;
+  lng: number;
 }
 
 interface UserNotifications {
