@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import UserTable from "../components/UserTable";
 import FloatingSearchBar from "../components/FloatingSearchBar";
-import { useQuery } from "@tanstack/react-query";
 import { ClimbingBoxLoader } from "react-spinners";
 import { useUsers } from "../hooks/userCalls";
 

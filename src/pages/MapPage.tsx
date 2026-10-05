@@ -1,10 +1,11 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { useUsers } from "../hooks/userCalls";
+import { useUsers, useUsersLocation } from "../hooks/userCalls";
 import { ClimbingBoxLoader } from "react-spinners";
 import MapComponent from "../components/MapComponent";
 import UserTable from "../components/UserTable";
 const MapPage = () => {
   const { data: users, isLoading } = useUsers();
+  const { data: located, error } = useUsersLocation(users);
+  console.log(located, error);
 
   if (isLoading) {
     return (
