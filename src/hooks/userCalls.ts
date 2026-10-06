@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { UserAddress, Users } from "../types/Types";
 
 export const fetchUsers = async () => {
   const response = await fetch(
@@ -55,7 +56,7 @@ const writeCache = (key, value) => {
   }
 };
 
-export const getUserCords = async (adress) => {
+export const getUserCords = async (adress: UserAddress) => {
   const userAdressDetails = new URLSearchParams({
     street: adress.street,
     city: adress.city,
@@ -93,7 +94,7 @@ export const getUserCords = async (adress) => {
   return cords;
 };
 
-export const getAllUsersLocation = async (users) => {
+export const getAllUsersLocation = async (users: Users) => {
   const results = [];
   for (const user of users) {
     const cords = await getUserCords(user.profile.address);
@@ -104,7 +105,7 @@ export const getAllUsersLocation = async (users) => {
   return results;
 };
 
-export const useUsersLocation = (users) => {
+export const useUsersLocation = (users: Users) => {
   return useQuery({
     queryKey: ["usersLocation"],
     queryFn: () => getAllUsersLocation(users),

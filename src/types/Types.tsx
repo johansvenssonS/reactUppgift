@@ -28,7 +28,7 @@ interface UserProfile {
   name: string;
 }
 
-interface UserAddress {
+export interface UserAddress {
   city: string;
   street: string;
   zipCode: string;
@@ -39,4 +39,8 @@ interface UserAddress {
 interface UserNotifications {
   email: boolean;
   push: boolean;
+}
+
+export interface SearchBarProp {
+  searchUser: Function;
 }

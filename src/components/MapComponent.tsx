@@ -1,7 +1,8 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { getAllUsersLocation, useUsersLocation } from "../hooks/userCalls";
+import { UserAddress } from "../types/Types";
 
-const MapComponent = (props) => {
+const MapComponent = (props: UserAddress) => {
   return (
     <MapContainer
       center={[62, 16]}

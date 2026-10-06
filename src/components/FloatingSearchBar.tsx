@@ -1,4 +1,6 @@
-const FloatingSearchBar = (props) => {
+import { SearchBarProp } from "../types/Types";
+
+const FloatingSearchBar = (props: SearchBarProp) => {
   // prettier-ignore
 
   return (

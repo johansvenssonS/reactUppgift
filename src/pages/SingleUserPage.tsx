@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { ClimbingBoxLoader } from "react-spinners";
 import { useUsers } from "../hooks/userCalls";
 import { User } from "lucide-react";
+import { UserData } from "../types/Types";
 const SingleUserPage = () => {
   const { userId } = useParams();
 
@@ -18,7 +19,7 @@ const SingleUserPage = () => {
     );
   }
 
-  const user = users?.find((u) => String(u.id) === userId);
+  const user = users?.find((u: UserData) => String(u.id) === userId);
   console.log(user);
 
   let selectedBackground = "";

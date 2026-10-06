@@ -3,6 +3,7 @@ import UserTable from "../components/UserTable";
 import FloatingSearchBar from "../components/FloatingSearchBar";
 import { MoonLoader } from "react-spinners";
 import { useUsers } from "../hooks/userCalls";
+import { UserData, Users } from "../types/Types";
 
 const UserPage = () => {
   const [filteredUsers, setFilteredUsers] = useState([]);
@@ -23,7 +24,7 @@ const UserPage = () => {
 
   const searchUser = (e) => {
     let searchedStr = e.target.value;
-    const ressArr = users.filter((u) =>
+    const ressArr = users.filter((u: UserData) =>
       u.profile.name.toLowerCase().startsWith(searchedStr.toLowerCase()),
     );
     setFilteredUsers(ressArr);
