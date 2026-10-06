@@ -26,7 +26,7 @@ const MapPage = () => {
 
   return (
     <div className="flex flex-col items-center p-8 w-full ">
-      <MapComponent located={located}></MapComponent>
+      <MapComponent users={users}></MapComponent>
       <UserTable users={users}></UserTable>
     </div>
   );
