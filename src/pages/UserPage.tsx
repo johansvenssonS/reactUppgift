@@ -1,21 +1,21 @@
 import { useState } from "react";
 import UserTable from "../components/UserTable";
 import FloatingSearchBar from "../components/FloatingSearchBar";
-import { ClimbingBoxLoader } from "react-spinners";
+import { MoonLoader } from "react-spinners";
 import { useUsers } from "../hooks/userCalls";
 
 const UserPage = () => {
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [search, setSearched] = useState(false);
 
-  const { data: users, isLoading, error } = useUsers();
+  const { data: users, isLoading } = useUsers();
 
   if (isLoading) {
     return (
-      <div className="loading">
-        <ClimbingBoxLoader size={100} color="red">
+      <div className="flex items center w-full ">
+        <MoonLoader size={100} color="red">
           Laddar användare...
-        </ClimbingBoxLoader>
+        </MoonLoader>
         <p>Laddar användare..</p>
       </div>
     );

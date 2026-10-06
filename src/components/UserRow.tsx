@@ -15,12 +15,6 @@ const UserRow = ({ userData }: UserRowProps) => {
       <td className="border border-gray-300 px-4 py-2 align-top">
         {userData.profile.name}
       </td>
-      <td className="border border-gray-300 px-4 py-2 align-top">
-        {userData.settings.theme}
-      </td>
-      <td className="border border-gray-300 px-4 py-2 align-top">
-        {userData.roles}
-      </td>
     </tr>
   );
 };

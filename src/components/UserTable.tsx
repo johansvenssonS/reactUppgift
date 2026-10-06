@@ -10,15 +10,7 @@ const UserTable = (props: Users) => {
             <th className="border border-gray-300 px-4 py-2 text-left">
               Användarnamn
             </th>
-            <th className="border border-gray-300 px-4 py-2 text-left">
-              Profil
-            </th>
-            <th className="border border-gray-300 px-4 py-2 text-left">
-              Inställningar
-            </th>
-            <th className="border border-gray-300 px-4 py-2 text-left">
-              Roller
-            </th>
+            <th className="border border-gray-300 px-4 py-2 text-left">Namn</th>
           </tr>
         </thead>
         <tbody>

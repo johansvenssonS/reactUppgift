@@ -1,7 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 
 export const fetchUsers = async () => {
-  const response = await fetch("/users.JSON");
+  const response = await fetch(
+    `https://api-userapi.onrender.com/api/users/getUsers`,
+    {
+      headers: {
+        "x-api-key": "elev-hemlighet-2026",
+      },
+    },
+  );
   if (!response.ok)
     throw new Error("Kunde inte hämta användare" + response.status);
   return response.json();
